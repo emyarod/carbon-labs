@@ -15,6 +15,12 @@ import { SideNavMenu } from '../components/SideNavMenu';
 import { SideNavMenuItem } from '../components/SideNavMenuItem';
 import { HeaderPanel } from '../components/HeaderPanel';
 import { SideNavLink } from '../components/SideNavLink';
+import {
+  HeaderAction,
+  HeaderActionActions,
+  HeaderActionButton,
+  HeaderActionContent,
+} from '../components/HeaderAction';
 import { HeaderContainer } from '../components/HeaderContainer';
 import {
   SkipToContent,
@@ -31,6 +37,9 @@ import {
   Switcher,
   SwitcherItem,
   SwitcherDivider,
+  IconButton,
+  Link,
+  Button,
 } from '@carbon/react';
 import {
   Add,
@@ -51,6 +60,7 @@ import {
   Search,
   Notification,
   Switcher as SwitcherIcon,
+  Information,
 } from '@carbon/icons-react';
 
 import {
@@ -177,6 +187,25 @@ export const Default = () => (
               [Platform]
             </HeaderName>
             <HeaderGlobalBar>
+              <HeaderAction align="bottom-right">
+                <HeaderActionButton
+                  align="bottom"
+                  label="Show information"
+                  as={IconButton}>
+                  <Information />
+                </HeaderActionButton>
+                <HeaderActionContent>
+                  <p>
+                    Lorem ipsum dolor sit amet, di os consectetur adipiscing
+                    elit, sed do eiusmod tempor incididunt ut fsil labore et
+                    dolore magna aliqua.
+                  </p>
+                  <HeaderActionActions>
+                    <Link href="#">Link action</Link>
+                    <Button size="sm">Button</Button>
+                  </HeaderActionActions>
+                </HeaderActionContent>
+              </HeaderAction>
               <HeaderGlobalAction aria-label="Search">
                 <Search size={20} />
               </HeaderGlobalAction>

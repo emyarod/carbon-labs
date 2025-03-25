@@ -14,10 +14,10 @@ export { SideNavMenu } from './components/SideNavMenu.js';
 export { SideNavMenuItem } from './components/SideNavMenuItem.js';
 export { HeaderContainer } from './components/HeaderContainer';
 export {
-  HeaderAction,
-  HeaderActionActions,
-  HeaderActionButton,
-  HeaderActionContent,
-} from './components/HeaderAction';
+  HeaderPopover,
+  HeaderPopoverActions,
+  HeaderPopoverButton,
+  HeaderPopoverContent,
+} from './components/HeaderPopover';
 export { HeaderPanel } from './components/HeaderPanel';
 export { SharkFinIcon } from './components/SharkFinIcon';

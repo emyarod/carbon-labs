@@ -16,12 +16,12 @@ import { SideNavMenuItem } from '../components/SideNavMenuItem';
 import { HeaderPanel } from '../components/HeaderPanel';
 import { SideNavLink } from '../components/SideNavLink';
 import {
-  HeaderAction,
-  HeaderActionActions,
-  HeaderActionButton,
-  HeaderActionContent,
+  HeaderPopover,
+  HeaderPopoverActions,
+  HeaderPopoverButton,
+  HeaderPopoverContent,
   animationType,
-} from '../components/HeaderAction';
+} from '../components/HeaderPopover';
 import { HeaderContainer } from '../components/HeaderContainer';
 import {
   SkipToContent,
@@ -187,22 +187,22 @@ export const Default = () => (
               [Platform]
             </HeaderName>
             <HeaderGlobalBar>
-              <HeaderAction align="bottom-right">
-                <HeaderActionButton align="bottom" label="Show information">
+              <HeaderPopover align="bottom-right">
+                <HeaderPopoverButton align="bottom" label="Show information">
                   <Information />
-                </HeaderActionButton>
-                <HeaderActionContent>
+                </HeaderPopoverButton>
+                <HeaderPopoverContent>
                   <p>
                     Lorem ipsum dolor sit amet, di os consectetur adipiscing
                     elit, sed do eiusmod tempor incididunt ut fsil labore et
                     dolore magna aliqua.
                   </p>
-                  <HeaderActionActions>
+                  <HeaderPopoverActions>
                     <Link href="#">Link action</Link>
                     <Button size="sm">Button</Button>
-                  </HeaderActionActions>
-                </HeaderActionContent>
-              </HeaderAction>
+                  </HeaderPopoverActions>
+                </HeaderPopoverContent>
+              </HeaderPopover>
               {/* // TODO: await release of https://github.com/carbon-design-system/carbon/pull/18732 */}
               <HeaderGlobalAction aria-label="Search">
                 <Search size={20} />
@@ -721,22 +721,22 @@ export const HeaderStory = ({ animate }) => (
             [Platform]
           </HeaderName>
           <HeaderGlobalBar>
-            <HeaderAction align="bottom-right" animate={animate}>
-              <HeaderActionButton align="bottom" label="Show information">
+            <HeaderPopover align="bottom-right" animate={animate}>
+              <HeaderPopoverButton align="bottom" label="Show information">
                 <Information />
-              </HeaderActionButton>
-              <HeaderActionContent>
+              </HeaderPopoverButton>
+              <HeaderPopoverContent>
                 <p>
                   Lorem ipsum dolor sit amet, di os consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut fsil labore et dolore
                   magna aliqua.
                 </p>
-                <HeaderActionActions>
+                <HeaderPopoverActions>
                   <Link href="#">Link action</Link>
                   <Button size="sm">Button</Button>
-                </HeaderActionActions>
-              </HeaderActionContent>
-            </HeaderAction>
+                </HeaderPopoverActions>
+              </HeaderPopoverContent>
+            </HeaderPopover>
             {/* // TODO: await release of https://github.com/carbon-design-system/carbon/pull/18732 */}
             <HeaderGlobalAction aria-label="Search">
               <Search size={20} />

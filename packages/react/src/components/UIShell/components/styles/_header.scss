@@ -11,6 +11,10 @@
 
 $prefix: 'cds' !default;
 
+.#{$prefix}--header__action:focus {
+  border-width: 2px;
+}
+
 // TODO: remove when https://github.com/carbon-design-system/carbon/pull/18725 is released
 .#{$prefix}--header-action .#{$prefix}--tooltip-content {
   color: $text-primary;

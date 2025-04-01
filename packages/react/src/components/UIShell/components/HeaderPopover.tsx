@@ -48,6 +48,15 @@ function useToggletip() {
   return useContext(HeaderPopoverContext);
 }
 
+export enum animationType {
+  DEFAULT = 'default',
+  SLIDE_DOWN = 'slide-down',
+}
+
+type HeaderPopoverProps = {
+  animate: animationType;
+} & ToggletipProps<any>;
+
 /**
  * Used as a container for the button and content of a toggletip. This component
  * is responsible for coordinating between interactions with the button and the
@@ -55,13 +64,14 @@ function useToggletip() {
  */
 export function HeaderPopover({
   align,
+  animate = animationType.DEFAULT,
   as,
   autoAlign,
   className: customClassName,
   children,
   defaultOpen = false,
   ...rest
-}: ToggletipProps<any>) {
+}: HeaderPopoverProps) {
   const ref = useRef<Element>(null);
   const [open, setOpen] = useState(defaultOpen);
   const prefix = usePrefix();
@@ -69,6 +79,8 @@ export function HeaderPopover({
   const className = cx(customClassName, {
     [`${prefix}--header-action`]: true,
     [`${prefix}--autoalign`]: autoAlign,
+    [`${prefix}--animate`]: animate !== animationType.DEFAULT,
+    [`${prefix}--animate--slide-down`]: animate === animationType.SLIDE_DOWN,
   });
   const actions = {
     toggle: () => {
@@ -219,6 +231,11 @@ export function HeaderPopoverButton<T extends React.ElementType>({
     [`${prefix}--header-action__button`]: true,
   });
   const ComponentToggle: any = BaseComponent ?? IconButton;
+  // TODO:
+  // EITHER:
+  // move iconbutton code here and set tooltip `open` prop to false if togggletip is open (not possible without exporting ButtonBase)
+  // OR:
+  // add `open` prop to IconButton upstream and pass it here
   return (
     <ComponentToggle
       {...toggletip?.onClick}

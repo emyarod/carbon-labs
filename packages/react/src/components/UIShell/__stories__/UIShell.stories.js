@@ -620,6 +620,10 @@ export const Demo = () => {
                 isChildOfHeader={false}
                 isRail
                 enableRailPin
+                sideNavPinProps={{
+                  renderIcon: Home,
+                  onSideNavPinClick: () => console.log('asdf'),
+                }}
                 aria-label="Product navigation">
                 <SideNavItems>
                   <SideNavSlot renderIcon={VirtualColumnKey}>
